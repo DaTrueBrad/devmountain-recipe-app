@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Header.module.css";
-import { CgFacebook, CgInstagram, CgTwitter } from "react-icons/cg";
 import { ImFacebook, ImInstagram, ImTwitter, ImGithub } from "react-icons/im";
 
 const Footer = () => {

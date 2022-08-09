@@ -8,7 +8,9 @@ const RecipeContainer = ({recipes}) => {
 
   const recipeDisplay = recipes
     .filter((recipe, index) => {
-      return recipe.recipe_name.toLowerCase().includes(search.toLowerCase())
+      let title = recipe.recipe_name.toLowerCase()
+      let searchParams = search.toLowerCase()
+      return title.includes(searchParams)
     })
     .map((recipe, index) => {
       return <RecipeCard recipe={recipe}/>

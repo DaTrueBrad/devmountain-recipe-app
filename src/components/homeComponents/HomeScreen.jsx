@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const HomeScreen = () => {
   const [recipes, setRecipes] = useState([])
-  const url = 'http://localhost:4000'
+  const url = 'https://recipes.devmountain.com'
 
   const getRecipes = () => {
     axios
@@ -19,6 +19,7 @@ const HomeScreen = () => {
   useEffect(() => {
     getRecipes()
   },[])
+  
   return (
     <div>
       <AdBanner />

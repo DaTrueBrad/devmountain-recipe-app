@@ -7,8 +7,7 @@ const NewRecipeScreen = () => {
   const [ingredients, setIngredients] = useState([]);
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
-  const [instructions, setInstructions] = useState("")
-  const url = 'http://localhost:4000'
+  const url = "https://recipes.devmountain.com";
 
   const addIngredient = () => {
     setIngredients([...ingredients, { name, quantity }]);
@@ -28,16 +27,18 @@ const NewRecipeScreen = () => {
   };
 
   const onSubmit = (values) => {
-    values.ingredients = ingredients;
-    axios
-      .post(`${url}/recipes`, values)
-      .then((res) => {
-        console.log(res.data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  };
+    console.log(values)
+  }
+  //   values.ingredients = ingredients;
+  //   axios
+  //     .post(`https://recipes.devmountain.com/recipes`, values)
+  //     .then((res) => {
+  //       console.log(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   const ingredientDisplay = ingredients.map((ing) => {
     return (
@@ -139,19 +140,19 @@ const NewRecipeScreen = () => {
             >
               Add Another
             </button>
-            <textarea placeholder="Type your instructions" rows={5} value={values.instructions}
+            <textarea
+              placeholder="Type your instructions"
+              rows={5}
+              value={values.instructions}
               onChange={handleChange}
-              name="instructions"/>
+              name="instructions"
+            />
             <button type="submit" className="blue-btn">
               Submit
             </button>
           </form>
         )}
       </Formik>
-      {/* {instructions && JSON.parse(instructions)} */}
-      <div style={{whiteSpace: 'pre-wrap'}}>
-        {instructions}
-      </div>
     </section>
   );
 };

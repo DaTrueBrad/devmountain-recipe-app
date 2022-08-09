@@ -11,10 +11,6 @@ header {
   box-sizing: border-box;
 }
 
-
-
-
-
 .nav_btn {
   --color: hsl(var(--primary-color), var(--l));
   background-color: var(--color);
